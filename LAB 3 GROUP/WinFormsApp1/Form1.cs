@@ -68,6 +68,7 @@ namespace WinFormsApp1
             else
             {
                 MessageBox.Show("Username or Password is incorrect !");
+                Program.con.Close();
             }
         }
 

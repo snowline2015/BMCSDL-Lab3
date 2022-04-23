@@ -97,8 +97,16 @@ namespace WinFormsApp1
 
             if (e.ColumnIndex == dataGridView1.Columns["DIEM"].Index)
             {
+                string query = "IF NOT EXISTS (SELECT * FROM sys.asymmetric_keys WHERE name = '" + Form1.ID + "_DIEM"
+                    + "') CREATE ASYMMETRIC KEY " + Form1.ID + "_DIEM"
+                    + " WITH ALGORITHM = RSA_512 ENCRYPTION BY PASSWORD = '" + Form1.pubKey + "'";
+                SqlCommand cmd = new SqlCommand(query, Program.con);
+                cmd.ExecuteNonQuery();
+
                 DataGridViewRow current = dataGridView1.CurrentRow;
-                string query = "SELECT MASV, MAHP, DIEMTHI FROM BANGDIEM WHERE MASV = '" + current.Cells[dataGridView1.Columns["MASV"].Index].Value + "'";
+                query = "SELECT MASV, MAHP, CONVERT(VARCHAR(MAX), DECRYPTBYASYMKEY(ASYMKEY_ID('" + Form1.ID + "_DIEM" 
+                    + "'), DIEMTHI, CONVERT(NVARCHAR(MAX), '" + Form1.pubKey 
+                    + "'))) AS DIEMTHI FROM BANGDIEM WHERE MASV = '" + current.Cells[dataGridView1.Columns["MASV"].Index].Value + "'";
 
                 SqlDataAdapter sda = new SqlDataAdapter(query, Program.con);
                 DataTable dtbl = new DataTable();
@@ -106,18 +114,20 @@ namespace WinFormsApp1
 
                 editGradeForm.dataGridView2.DataSource = dtbl;
                 editGradeForm.dataGridView2.EditMode = DataGridViewEditMode.EditOnEnter;
+                Grade.addedRow = false;
+                Grade.currentRows = dtbl.Rows.Count;
 
-                foreach (DataGridViewColumn dc in editGradeForm.dataGridView2.Columns)
-                {
-                    if (dc.Index.Equals(0) || dc.Index.Equals(1))
-                    {
-                        dc.ReadOnly = true;
-                    }
-                    else
-                    {
-                        dc.ReadOnly = false;
-                    }
-                }
+                //foreach (DataGridViewColumn dc in editGradeForm.dataGridView2.Columns)
+                //{
+                //    if (dc.Index.Equals(0) || dc.Index.Equals(1))
+                //    {
+                //        dc.ReadOnly = true;
+                //    }
+                //    else
+                //    {
+                //        dc.ReadOnly = false;
+                //    }
+                //}
 
                 editGradeForm.ShowDialog();
             }
