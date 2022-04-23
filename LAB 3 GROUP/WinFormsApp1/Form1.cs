@@ -49,6 +49,7 @@ namespace WinFormsApp1
 
         private void button1_Click(object sender, EventArgs e)
         {
+            Program.con.Open();
             string query = "SELECT MANV, PUBKEY FROM NHANVIEN WHERE TENDN = '" + textBox1.Text.Trim() + "' AND CONVERT(VARCHAR(MAX), MATKHAU, 2) = '" + Sha1(textBox2.Text.Trim()) + "'";
             SqlDataAdapter sda = new SqlDataAdapter(query, Program.con);
             DataTable dtbl = new DataTable();

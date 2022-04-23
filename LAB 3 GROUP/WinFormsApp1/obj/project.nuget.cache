@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "TFyoEJhqa5qCRafgOZrhjqJRaR60K1mwQpMNLwmx7RdJ4mTmpi6C74b5oEfQh66Qypat85BALRqhZn6N/e+mKg==",
+  "dgSpecHash": "yokHv2Fi01IGRkI89UlUATI3BcDJUdU8clFV9wUrNKqDNqIsmicUTbwUH3Nr3pdSfDzkdgwnLtvyQeOuBw3Z2g==",
   "success": true,
-  "projectFilePath": "C:\\Users\\USER\\Desktop\\LAB 3 GROUP\\WinFormsApp1\\WinFormsApp1.csproj",
+  "projectFilePath": "C:\\Users\\USER\\Documents\\GitHub\\BMCSDL-Lab3\\LAB 3 GROUP\\WinFormsApp1\\WinFormsApp1.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\USER\\.nuget\\packages\\microsoft.netcore.platforms\\3.1.0\\microsoft.netcore.platforms.3.1.0.nupkg.sha512",
     "C:\\Users\\USER\\.nuget\\packages\\microsoft.win32.registry\\4.7.0\\microsoft.win32.registry.4.7.0.nupkg.sha512",

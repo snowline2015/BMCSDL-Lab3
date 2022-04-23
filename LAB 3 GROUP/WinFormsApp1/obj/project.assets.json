@@ -460,11 +460,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\USER\\Desktop\\LAB 3 GROUP\\WinFormsApp1\\WinFormsApp1.csproj",
+      "projectUniqueName": "C:\\Users\\USER\\Documents\\GitHub\\BMCSDL-Lab3\\LAB 3 GROUP\\WinFormsApp1\\WinFormsApp1.csproj",
       "projectName": "WinFormsApp1",
-      "projectPath": "C:\\Users\\USER\\Desktop\\LAB 3 GROUP\\WinFormsApp1\\WinFormsApp1.csproj",
+      "projectPath": "C:\\Users\\USER\\Documents\\GitHub\\BMCSDL-Lab3\\LAB 3 GROUP\\WinFormsApp1\\WinFormsApp1.csproj",
       "packagesPath": "C:\\Users\\USER\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\USER\\Desktop\\LAB 3 GROUP\\WinFormsApp1\\obj\\",
+      "outputPath": "C:\\Users\\USER\\Documents\\GitHub\\BMCSDL-Lab3\\LAB 3 GROUP\\WinFormsApp1\\obj\\",
       "projectStyle": "PackageReference",
       "fallbackFolders": [
         "C:\\Program Files (x86)\\Microsoft\\Xamarin\\NuGet\\"
