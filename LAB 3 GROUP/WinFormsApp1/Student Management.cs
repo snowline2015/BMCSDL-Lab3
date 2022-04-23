@@ -104,7 +104,7 @@ namespace WinFormsApp1
                 cmd.ExecuteNonQuery();
 
                 DataGridViewRow current = dataGridView1.CurrentRow;
-                query = "SELECT MASV, MAHP, CONVERT(VARCHAR(MAX), DECRYPTBYASYMKEY(ASYMKEY_ID('" + Form1.ID + "_DIEM" 
+                query = "SELECT MAHP, CONVERT(VARCHAR(MAX), DECRYPTBYASYMKEY(ASYMKEY_ID('" + Form1.ID + "_DIEM" 
                     + "'), DIEMTHI, CONVERT(NVARCHAR(MAX), '" + Form1.pubKey 
                     + "'))) AS DIEMTHI FROM BANGDIEM WHERE MASV = '" + current.Cells[dataGridView1.Columns["MASV"].Index].Value + "'";
 
@@ -116,6 +116,7 @@ namespace WinFormsApp1
                 editGradeForm.dataGridView2.EditMode = DataGridViewEditMode.EditOnEnter;
                 Grade.addedRow = false;
                 Grade.currentRows = dtbl.Rows.Count;
+                Grade.ID = current.Cells[dataGridView1.Columns["MASV"].Index].Value.ToString();
 
                 //foreach (DataGridViewColumn dc in editGradeForm.dataGridView2.Columns)
                 //{
